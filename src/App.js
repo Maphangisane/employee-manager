@@ -12,6 +12,7 @@ function App() {
 
      <div className='App'>
         <Dashboard/>
+        <h1>hi</h1>
      </div>
 
    
