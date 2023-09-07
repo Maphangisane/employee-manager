@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,7 +9,11 @@ function App() {
 
   return (
      //routing 
-    <></>
+     <div>
+          <h1>Dashboard</h1>
+    <h2>Registration</h2>
+     </div>
+
    
   );
 }
