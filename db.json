@@ -2,8 +2,11 @@
   "profile": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "Fullname": "Thabang Maphangisane",
+      "Phone": "071234567",
+      "Position": "Software Developer",
+      "Email": "Thabang@tshimologong.com",
+      "Password": "1234567890"
     }
   ]
 }
