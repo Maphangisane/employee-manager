@@ -1,14 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Dashboard from './components/Dashboard';
 function App() {
-   //global states are declared here please
 
+   //global states are declared here please
   //  functions
-   
+  
+   //global states
+
   return (
-     //routing 
-    <></>
+     //routing
+
+     <div className='App'>
+        <Dashboard/>
+        <h1>hi</h1>
+     </div>
+
    
   );
 }
