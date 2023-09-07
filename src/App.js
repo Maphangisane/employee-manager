@@ -1,5 +1,5 @@
 import './App.css';
-
+import Dashboard from './components/Dashboard';
 function App() {
 
    //global states are declared here please
@@ -8,10 +8,10 @@ function App() {
    //global states
 
   return (
-     //routing 
-     <div>
-          <h1>Dashboard</h1>
-    <h2>Registration</h2>
+     //routing
+
+     <div className='App'>
+        <Dashboard/>
      </div>
 
    
