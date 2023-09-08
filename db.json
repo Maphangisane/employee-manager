@@ -1,20 +1,6 @@
 {
+
   "profiles": [
-    {
-      "id": 1,
-      "Fullname": "Thabang Maphangisane",
-      "Phone": "071234567",
-      "Position": "Software Developer",
-      "Email": "Thabang@tshimologong.com",
-      "Password": "1234567890"
-    },
-    {
-      "id": 1,
-      "Fullname": "Fortunate Motsoeneng",
-      "Phone": "071234566",
-      "Position": "Software Developer",
-      "Email": "Fortunate@tshimologong.com",
-      "Password": "1234567890"
-    }
-  ]
+]
+
 }
