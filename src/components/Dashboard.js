@@ -1,10 +1,16 @@
-//profile info 
 import React from 'react'
+import Sidebar from './Sidebar';
 
 const Dashboard = () => {
+
+
   return (
-    <div>Dashboard</div>
-  )
+    <div>
+
+        <h1>Dashboard</h1>
+     
+    </div>
+)
 }
 
 export default Dashboard
