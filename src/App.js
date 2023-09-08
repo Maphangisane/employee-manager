@@ -1,13 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Dashboard from "./components/Dashboard";
+import Registration from "./components/Registration";
 function App() {
-   //global states
-   
+  //global states are declared here please
+  //  functions
+
+  //global states
+
   return (
-     //routing 
-    <></>
-   
+    //routing
+
+    <div className="App">
+      <Dashboard />
+      <Registration />
+    </div>
   );
 }
 
