@@ -1,0 +1,21 @@
+.edit-box{
+    width: 60%;
+    margin: 0 auto;
+    height: 700px;
+}
+.edit_title h1{
+    font-size: 65px;
+    margin-bottom: 0;
+}
+.edit_title p{
+    font-size: 18px;
+    margin-top: 0;
+}
+.contact-details p, .change-profile p{
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 25px;
+}
+.contact-details p i,  .change-profile p i {
+    margin-right: 10px;
+}

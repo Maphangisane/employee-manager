@@ -1,6 +1,20 @@
 {
-
   "profiles": [
-]
-
+    {
+      "name": "sant",
+      "profession": "developer software",
+      "email": "maphangisan@gmail.com",
+      "password": "11111",
+      "phone": "1234567890",
+      "id": 4
+    },
+    {
+      "name": "Lesiba",
+      "profession": "Dev",
+      "email": "l@gmail.com",
+      "phone": "1234567890",
+      "password": "12345",
+      "id": 5
+    }
+  ]
 }
