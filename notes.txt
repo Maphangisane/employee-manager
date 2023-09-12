@@ -1,0 +1,158 @@
+// imports
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+const Registration = ({personData}) => {
+const navigate = useNavigate();
+
+
+  const [profile, setProfile] = useState({
+    name: "",
+    profession: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const sendData = async()=>{
+    try{
+        const response = await fetch('http://localhost:5000/profiles',{
+          method:'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body:JSON.stringify(profile)
+        })
+        if(response.ok){
+          console.log('form data sent')
+        }else{
+          console.log('data could not be send')
+        }
+      }catch(error){
+        console.log(error)
+    }
+      navigate('/');
+  }
+  // functions
+  function handleInputChange(e) {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      [name]: value,
+    }));
+  }
+
+  // function to set confirm password
+  function confirmPasswordHandler(e) {
+    // cancels browser refresh while allowing us to execute any code we write here
+    e.preventDefault();
+    // we set the value from input
+    const { value } = e.target;
+    setConfirmPassword(value);
+  }
+
+  // validate info function
+  function validateInputInfo(e) {
+    e.preventDefault();
+    // create the error variables
+    let emptyValue ='';
+
+    for (const key in profile) {
+      if(profile[key] === ""){
+        emptyValue = 'please fill all the attributes'
+      }
+    }
+    let error = "";
+    if(emptyValue){
+      console.log(emptyValue)
+    }else{
+      if (profile.phone.length !== 10) {
+        error = "please enter 10 digit numbers";
+      }
+      if (confirmPassword !== profile.password) {
+        error = "confirm Password";
+      }
+      if(error) {
+        console.log(`please fix this ${error}`);
+      } else {
+        sendData()
+      }
+    }
+  }
+
+  return (
+    <div className="Registration">
+      <h2>Heading</h2>
+
+      <form>
+        <label>Full Name</label>
+        <input
+          type="text"
+          name="name"
+          required
+          value={personData.name }
+          placeholder="Enter Full Name...."
+          onChange={handleInputChange}
+        />
+
+        {/*  */}
+        <label>Profession</label>
+        <input
+          type="text"
+          name="profession"
+          required
+          value={personData ? personData.profession : profile.profession}
+          placeholder="Enter name of your profession"
+          onChange={handleInputChange}
+        />
+
+        {/*  */}
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          required
+          value={personData ? personData.email : profile.email}
+          placeholder="Enter email email@email.com"
+          onChange={handleInputChange}
+        />
+
+        {/*  */}
+        <label>Phone number</label>
+        <input
+          type="phone"
+          name="phone"
+          required
+          value={personData ? personData.phone : profile.phone}
+          placeholder="Enter your phone number"
+          onChange={handleInputChange}
+        />
+
+        {/*  */}
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          required
+          value={personData ? personData.password : profile.password}
+          placeholder="Enter your password"
+          onChange={handleInputChange}
+        />
+        {/*  */}
+        <label>Confirm password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          required
+          value={confirmPassword}
+          placeholder="Please confirm your password"
+          onChange={confirmPasswordHandler}
+        />
+        {/*  */}
+        <button onClick={validateInputInfo}>Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default Registration;
